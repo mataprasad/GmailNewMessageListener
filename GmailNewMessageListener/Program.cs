@@ -13,12 +13,13 @@ namespace GmailNewMessageListener
 		public const int Port = 993;
 
 		// Authentication-related properties
-		public const string Username = "dev.manntalks@gmail.com";
+		public static string Username = string.Empty;
 		public static string Password = string.Empty;
 		static Program()
         {
 			dotenv.net.DotEnv.Load();
-			Password = Environment.GetEnvironmentVariable("DevMannPassword");
+			Password = Environment.GetEnvironmentVariable("GmailPassword");
+			Username = Environment.GetEnvironmentVariable("GmailUsername");
 		}
 		public static void Main(string[] args)
 		{
